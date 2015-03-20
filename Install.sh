@@ -83,7 +83,7 @@ if [ ! -d $PHP_INSTALL_PATH ]; then
 	fi
 	mkdir -p $PHP_INSTALL_PATH 
 	cd $WORKDIR/php-$PHP_VERSION
-	./configure --prefix=$PHP_INSTALL_PATH --with-curl --enable-mbstring --with-mcrypt=/usr/local --with-mysql=$MYSQL_INSTALL_PATH --with-mysqli=$MYSQL_INSTALL_PATH/bin/mysql_config --with-pdo-mysql=$MYSQL_INSTALL_PATH --enable-fpm --enable-libxml --with-xsl --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --with-zlib-dir --enable-opcache --with-openssl
+	./configure --prefix=$PHP_INSTALL_PATH --with-curl --enable-mbstring --with-mcrypt=/usr/local --with-mysql=$MYSQL_INSTALL_PATH --with-mysqli=$MYSQL_INSTALL_PATH/bin/mysql_config --with-pdo-mysql=$MYSQL_INSTALL_PATH --enable-fpm --enable-libxml --with-xsl --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --with-zlib --enable-opcache --with-openssl
 	make 
 	make install
 	cp $PHP_INSTALL_PATH/etc/php-fpm.conf.default $PHP_INSTALL_PATH/etc/php-fpm.conf
