@@ -9,7 +9,7 @@ if [ ! -d $NGX_INSTALL_PATH ]; then
 	useradd -M -s /bin/false -g $NGX_GROUP $NGX_USER
 	if [ ! -d $WORKDIR/nginx-$NGX_VERSION ]; then
 		cd $WORKDIR
-		curl -o $WORKDIR/nginx-$NGX_VERSION.tar.gz http://mirrors.sohu.com/nginx/nginx-$NGX_VERSION.tar.gz
+		curl -o $WORKDIR/nginx-$NGX_VERSION.tar.gz $NGX_DL_URL
 		tar zxf $WORKDIR/nginx-$NGX_VERSION.tar.gz
 	fi
 	mkdir -p $(NGX_INSTALL_PATH) 
@@ -78,7 +78,7 @@ make install
 if [ ! -d $PHP_INSTALL_PATH ]; then
 	if [ ! -d $WORKDIR/php-$PHP_VERSION ]; then
 		cd $WORKDIR
-		curl -o $WORKDIR/php.tar.gz http://mirrors.sohu.com/php/php-$PHP_VERSION.tar.gz
+		curl -o $WORKDIR/php.tar.gz $PHP_DL_URL
 		tar zxf $WORKDIR/php.tar.gz 
 	fi
 	mkdir -p $PHP_INSTALL_PATH 
